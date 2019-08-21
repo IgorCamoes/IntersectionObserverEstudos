@@ -1,0 +1,148 @@
+html, body{
+    background-color: #241f20;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+}
+
+h2{
+    font-family: 'Oxygen', sans-serif;
+}
+
+section{
+    display: flex;
+    height: 101vh;
+    width: 100%;
+}
+
+section:first-child{
+    align-items: center;
+
+    div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: space-between;
+    width: 100%;
+
+    h2:first-child{
+        color: rgb(219, 219, 219);
+        font-weight: 100;
+
+        span{
+            color: white;
+            font-weight: bold;
+        }
+    }
+    h2:last-child{
+        animation: test 1.5s alternate infinite;
+        color: white;
+        text-align: center;
+        user-select: none;
+    }
+    }
+}
+
+section:nth-child(2){
+    align-items: center;
+
+    .anim:first-child{
+        height: 100%;
+        position: absolute;
+        width: 100%;
+
+        img{
+            height: auto;
+            transform: rotateX(180deg);
+            filter: grayscale(100);
+        }
+    }
+
+    .anim:nth-child(2){
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        width: 80%;
+
+        h2{
+            color: #fae29a;
+            font-weight: 100;
+            text-align: center;
+            user-select: none;
+            width: 55%;
+        }
+
+        button{
+            background: transparent;
+            border: 1px solid white;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            font-family: 'Oxygen', sans-serif;
+            height: 10%;
+            opacity: 0;
+            outline: none;
+            width: 15%;
+        }
+    }
+}
+
+.anim{
+    opacity: 0;
+}
+
+@keyframes anim1{
+    from{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes anim2{
+    from{
+        filter: grayscale(100);
+    }
+    to{
+        filter: grayscale(0);
+        opacity: 1;
+    }
+}
+
+@keyframes test{
+    from{
+        transform: translateY(0px) rotate(180deg) rotateY(180deg);
+    }
+    to{
+        transform: translateY(50px) rotate(180deg) ;
+    }
+}
+
+@media(max-width: 1000px){
+    section:nth-child(2){
+        
+        img{
+            height: 50%;
+            position: absolute;
+            top: 30%;
+            width: 50%;
+        }
+
+        .anim:last-child{
+            h2{
+                width: 50%;
+            }
+    
+            button{
+                width: 40%;
+            }
+        }
+    }
+}
